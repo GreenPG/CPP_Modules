@@ -2,24 +2,31 @@
 #include <iostream>
 #include <string>
 
-enum	e_Command_id {ADD, SEARCH, EXIT};
 
 int	main(void)	{
 	PhoneBook	phoneBook;
-	int			input;
+	std::string	input;
+	int			commandID;
 
 	while (1)	{
-		std::cout << "Type a command :";
-		std::cin >> input;
-		if (input != ADD || input != SEARCH || input != EXIT)
-			std::cout << "Only ADD, SEARCH and EXIT are accpeted" << std::endl;
+		std::cout << "Type a command : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return (0);
+		if (input.compare("ADD") != 0 && input.compare("SEARCH") != 0 && input.compare("EXIT") != 0)
+			std::cout << "Only ADD, SEARCH and EXIT are accepted" << std::endl;
 		else	{
-			switch	(input)	{
-				case (ADD):
-
-				case (SEARCH):
-
-				case (EXIT):
+		commandID = input.compare("A");
+			switch	(commandID)	{
+				case (2):
+					if (phoneBook.addContact() == -1)
+						return (-1);
+					break;
+				case (4):
+					return(0);
+				case (18):
+					if (phoneBook.search() == -1)
+						return (-1);
 					break;
 			}
 		}

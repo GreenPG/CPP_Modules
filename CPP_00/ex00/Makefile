@@ -22,7 +22,7 @@ OBJ = ${SRC:.cpp=.o}
 
 all:	${NAME}
 
-.c.o:
+.cpp.o:
 	@printf "Compiling .cpp to .o \r"
 	@${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
 	

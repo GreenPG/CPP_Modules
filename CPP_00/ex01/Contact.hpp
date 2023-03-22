@@ -1,11 +1,12 @@
 #include <string>
+#include <iostream>
 
 class	Contact	{
 
 public:
 	Contact(void);
 
-//  private:
+	int	registerContact(void);
 	std::string	firstName;
 	std::string	lastName;
 	std::string	nickName;
