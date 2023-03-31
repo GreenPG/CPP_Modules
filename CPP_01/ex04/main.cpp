@@ -10,11 +10,17 @@ std::string	getFileContent(const char *fileName)
 	std::fstream	inputFile;
 	
 	inputFile.open(fileName, std::ios::in);
+	if (inputFile.is_open() == false) {
+		std::cout << "Failed to open input file" << std::endl;
+		return ("");
+	}
 	inputFile >> input;
 	while (std::getline(inputFile, tmp)) {
 		input.append(tmp);
 		input.append("\n");
 	}
+	if (input.empty() == true)
+		return ("");
 	input.erase(input.end() - 1);
 	inputFile.close();
 	return (input);
@@ -22,10 +28,11 @@ std::string	getFileContent(const char *fileName)
 
 void	modifyInput(std::string &input, std::string s1, std::string s2) {
 	size_t	pos = input.find(s1);
+
 	while (pos != std::string::npos) {
-	input.erase(pos, s1.length());
-	input.insert(pos, s2);
-	pos = input.find(s1);
+		input.erase(pos, s1.length());
+		input.insert(pos, s2);
+		pos = input.find(s1);
 	}
 }
 
@@ -33,12 +40,14 @@ int	main(int ac , char **av) {
 	std::string		input;
 	std::string		newFileName;
 	std::ofstream	newFile;
-	
+
 	if (ac != 4) {
 		std::cout << "Expected three parameters" << std::endl;
 		return (1);
 	}
 	input = getFileContent(av[1]);
+	if (input.empty() == true)
+		return (1);
 	newFileName = av[1];
 	newFileName.append(".replace");
 	newFile.open(newFileName.c_str());

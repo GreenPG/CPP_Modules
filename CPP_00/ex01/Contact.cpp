@@ -12,17 +12,18 @@ std::string	fillField(std::string prompt)
 {
 	std::string field;
 
-	while (1)	{
-		std::cout << prompt;
-		std::getline(std::cin, field);	
-		if (std::cin.eof())
-			return ("");
-		if (field == "")
-			std::cout << "Contact fields can't be empty" << std::endl;
-		else
-			break;
+	std::cout << prompt;
+	std::getline(std::cin, field);	
+	if (std::cin.eof())
+		return ("");
+	if (field == "") {
+		std::cout << "Contact fields can't be empty" << std::endl;
+		field = fillField(prompt);
 	}
-	std::cout << std::endl;
+	else if (prompt.compare("Phone number : ") == 0 && field.find_first_not_of("0123456789") != std::string::npos) {
+		std::cout << "Phone number must only be digits" << std::endl;
+		field = fillField(prompt);
+	}
 	return (field);
 }
 

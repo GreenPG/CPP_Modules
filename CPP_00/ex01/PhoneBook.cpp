@@ -11,7 +11,7 @@ PhoneBook::PhoneBook	(void)	{
 
 void	displayContent(std::string content) {
 	if (content.length() <= 10) {
-		std::cout << std::left  << std::setfill(' ') << std::setw(10);
+		std::cout << std::right << std::setfill(' ') << std::setw(10);
 		std::cout << content;
 	}
 	else {
@@ -25,12 +25,13 @@ void	displayContent(std::string content) {
 void	displayBook(const PhoneBook *phoneBook) {
 	std::cout << std::setfill('-') << std::setw(45);
 	std::cout << "" << std::endl;
-	std::cout << "|  Index   |Last Name |First Name| Nickname |" << std::endl;
+	std::cout << "|  Index   | Last Name|First Name|  Nickname|" << std::endl;
 	std::cout << std::setfill('-') << std::setw(45);
 	std::cout << "" << std::endl;
 	for (int i  = 0; i < 8; i++)	{
 		std::cout << "|          |          |          |          |" << std::endl;
-		std::cout << "|    " << i + 1 << "     |";
+		std::cout << '|' << std::right << std::setfill(' ') << std::setw(10);
+		std::cout << i + 1 << '|';
 		displayContent(phoneBook->contactTab[i].firstName);
 		displayContent(phoneBook->contactTab[i].lastName);
 		displayContent(phoneBook->contactTab[i].nickName);

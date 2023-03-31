@@ -10,8 +10,8 @@ HumanB::~HumanB(void) {
 
 }
 
-void		HumanB::setWeapon(Weapon *weapon) {
-	this->weapon = weapon;
+void		HumanB::setWeapon(Weapon &weapon) {
+	this->weapon = &weapon;
 }
 
 void		HumanB::attack() const {
