@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 09:18:52 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/03 11:22:27 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
@@ -32,9 +44,9 @@ void	displayBook(const PhoneBook *phoneBook) {
 		std::cout << "|          |          |          |          |" << std::endl;
 		std::cout << '|' << std::right << std::setfill(' ') << std::setw(10);
 		std::cout << i + 1 << '|';
-		displayContent(phoneBook->contactTab[i].firstName);
-		displayContent(phoneBook->contactTab[i].lastName);
-		displayContent(phoneBook->contactTab[i].nickName);
+		displayContent(phoneBook->contactTab[i].getContent("firstName"));
+		displayContent(phoneBook->contactTab[i].getContent("lastName"));
+		displayContent(phoneBook->contactTab[i].getContent("nickName"));
 		std::cout << std::endl;
 	}
 	std::cout << std::setfill('-') << std::setw(45);
@@ -44,23 +56,24 @@ void	displayBook(const PhoneBook *phoneBook) {
 void	displayContact(Contact contact, int id)
 {
 	std::cout << "ID : " << id << std::endl;
-	std::cout << "First Name : " << contact.firstName << std::endl;
-	std::cout << "Last Name : " << contact.lastName << std::endl;
-	std::cout << "Nickname : " << contact.nickName << std::endl;
-	std::cout << "Phone number : " << contact.phoneNumber << std::endl;
-	std::cout << "Darkest secret : " << contact.darkestSecret << std::endl;
+	std::cout << "First Name : " << contact.getContent("firstName") << std::endl;
+	std::cout << "Last Name : " << contact.getContent("lastName") << std::endl;
+	std::cout << "Nickname : " << contact.getContent("nickName") << std::endl;
+	std::cout << "Phone number : " << contact.getContent("phoneNumber") << std::endl;
+	std::cout << "Darkest secret : " << contact.getContent("darkestSecret") << std::endl;
 }
 
 int	showContact(const PhoneBook *phoneBook)
 {
 	std::string input;
+	std::string	content;
 	int			id;
 
 	std::cout << "Contact ID : ";
 	std::getline(std::cin, input);
 	if (std::cin.eof())
 		return (-1);
-	if (input.length() < 1) {
+	if (input.length() != 1) {
 		std::cout << "Bad ID format" << std::endl;
 		return (0);
 	}
@@ -69,6 +82,11 @@ int	showContact(const PhoneBook *phoneBook)
 		return (0);
 	}
 	id = input[0] - 48;
+	content = phoneBook->contactTab[id - 1].getContent("firstName");
+	if (content.compare("") == 0) {
+		std::cout << "No contact for ID " << id << std::endl;
+		return (0);
+	}
 	displayContact(phoneBook->contactTab[id - 1], id);
 	return (0);
 }

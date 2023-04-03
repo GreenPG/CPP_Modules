@@ -1,10 +1,31 @@
-#include "Fixed.hpp"
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 09:23:40 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/03 16:09:56 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Fixed::Fixed(){
+#include "Fixed.hpp"
+#include <cmath>
+
+Fixed::Fixed(): _value(0) {
 	std::cout << "Default constructor called" << std::endl;
-	this->_value = 0;
 	return;
+}
+
+Fixed::Fixed(const int value) {
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = value << this->_fracBitsNb;
+}
+
+Fixed::Fixed(const float value) {
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(value * (1 << this->_fracBitsNb));
 }
 
 Fixed::~Fixed(){
@@ -24,22 +45,22 @@ Fixed & Fixed::operator=(const Fixed &copy){
 }
 
 int		Fixed::getRawBits( void ) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
 void	Fixed::setRawBits( int const raw ) {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
 
-class MyClass
-{
-	 public:
-		MyClass();
-		~MyClass();
-		MyClass (const MyClass &copy);
-		MyClass &operator=(const MyClass&);
-	 private:
-		
-};
+float	Fixed::toFloat( void ) const {
+	return ((float)this->_value / (float)(1 << this->_fracBitsNb));
+}
+
+int		Fixed::toInt( void ) const {
+	return (this->_value >> this->_fracBitsNb);
+}
+
+std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)	{
+	o << rhs.toFloat();
+	return (o);
+}

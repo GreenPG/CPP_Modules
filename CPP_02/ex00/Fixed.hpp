@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 09:23:14 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/03 09:23:14 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 class	Fixed 
 {
 	 public:
@@ -10,5 +22,5 @@ class	Fixed
 		void	setRawBits( int const raw );		
 	 private:
 		int					_value;
-		static int const	_frabBitsNb = 0;
+		static int const	_frabBitsNb = 8;
 };

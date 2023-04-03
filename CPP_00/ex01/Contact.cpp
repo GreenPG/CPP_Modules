@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 09:18:37 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/03 11:06:47 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 Contact::Contact(void)	{
@@ -43,5 +55,19 @@ int	Contact::registerContact(void)	{
 	this->darkestSecret  = fillField("Darkest secret : ");
 	if (this->darkestSecret == "")
 		return (-1);
+	return (0);
+}
+
+std::string	Contact::getContent(std::string content) const {
+	if (content == "firstName")
+		return (this->firstName);
+	if (content == "lastName")
+		return (this->lastName);
+	if (content == "nickName")
+		return (this->nickName);
+	if (content == "phoneNumber")
+		return (this->phoneNumber);
+	if (content == "darkestSecret")
+		return (this->darkestSecret);
 	return (0);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/03 09:23:09 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/03 09:23:17 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
 
@@ -13,7 +25,7 @@ Fixed::~Fixed(){
 
 Fixed::Fixed(const Fixed &copy){
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = copy._value;
+	*this = copy;
 }
 
 Fixed & Fixed::operator=(const Fixed &copy){
