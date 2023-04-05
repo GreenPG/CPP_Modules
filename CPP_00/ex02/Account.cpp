@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:19:25 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:19:26 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:13:50 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,21 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <time.h>
 
 int	Account::_nbAccounts  = 0;
 int	Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-void	insertTimeData(std::string *output, int timeData) {
-	std::ostringstream	convert;
-	std::string			converted;
-
-	convert << timeData;
-	if (timeData >= 10)
-		output->append(convert.str());
-	else {
-		output->append("0");
-		output->append(convert.str());
-	}
-}
-
 void	Account::_displayTimestamp(void) {
 	time_t 		rawTime;
 	struct tm	*timeInfo;
-	std::string	output;
+	char 		output[17];
 
 	std::time(&rawTime);
 	timeInfo = std::localtime(&rawTime);
-	output.append("[");
-	insertTimeData(&output, timeInfo->tm_year + 1900);
-	insertTimeData(&output, timeInfo->tm_mon);
-	insertTimeData(&output, timeInfo->tm_mday);
-	output.append("_");
-	insertTimeData(&output, timeInfo->tm_hour);
-	insertTimeData(&output, timeInfo->tm_min);
-	insertTimeData(&output, timeInfo->tm_sec);
-	output.append("] ");
+	std::strftime(output, 19, "[%Y%m%d_%H%M%S] ", timeInfo);
 	std::cout << output;
 }
 
@@ -81,21 +61,19 @@ Account::~Account(void) {
 }
 
 int	Account::getNbAccounts( void ) {
-	return (0);
+	return (_nbAccounts);
 }
 
 int	Account::getTotalAmount( void ) {
-
-	return (0);
+	return (_totalAmount);
 }
 
 int	Account::getNbDeposits( void ) {
-
-	return (0);
+	return (_totalNbDeposits);
 }
 
 int	Account::getNbWithdrawals( void ) {
-	return (0);
+	return (_totalNbWithdrawals);
 }
 
 void	Account::displayAccountsInfos( void ) {
@@ -132,8 +110,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 }
 
 int		Account::checkAmount( void ) const {
-
-	return (0);
+	return (this->_amount);
 }
 
 void	Account::displayStatus( void ) const {

@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2022/12/16 13:38:53 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/04 14:11:08 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = g++
 
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-NAME =	ex01 
+NAME =	Fixed	
 
 SRC =	main.cpp \
 		Fixed.cpp

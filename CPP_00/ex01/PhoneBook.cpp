@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:18:52 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 11:22:27 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/04 15:57:43 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 PhoneBook::PhoneBook	(void)	{
 	this->contactCount = 0;
 	return;
+}
+
+Contact	PhoneBook::getContact(int index) const  {
+	return (this->contactTab[index]);
 }
 
 void	displayContent(std::string content) {
@@ -34,19 +38,22 @@ void	displayContent(std::string content) {
 	std::cout << '|';
 }
 
-void	displayBook(const PhoneBook *phoneBook) {
+void	PhoneBook::displayBook() const{
+	Contact	currentContact;
+
 	std::cout << std::setfill('-') << std::setw(45);
 	std::cout << "" << std::endl;
 	std::cout << "|  Index   | Last Name|First Name|  Nickname|" << std::endl;
 	std::cout << std::setfill('-') << std::setw(45);
 	std::cout << "" << std::endl;
 	for (int i  = 0; i < 8; i++)	{
+		currentContact = this->getContact(i);
 		std::cout << "|          |          |          |          |" << std::endl;
 		std::cout << '|' << std::right << std::setfill(' ') << std::setw(10);
 		std::cout << i + 1 << '|';
-		displayContent(phoneBook->contactTab[i].getContent("firstName"));
-		displayContent(phoneBook->contactTab[i].getContent("lastName"));
-		displayContent(phoneBook->contactTab[i].getContent("nickName"));
+		displayContent(currentContact.getContent("firstName"));
+		displayContent(currentContact.getContent("lastName"));
+		displayContent(currentContact.getContent("nickName"));
 		std::cout << std::endl;
 	}
 	std::cout << std::setfill('-') << std::setw(45);
@@ -63,10 +70,10 @@ void	displayContact(Contact contact, int id)
 	std::cout << "Darkest secret : " << contact.getContent("darkestSecret") << std::endl;
 }
 
-int	showContact(const PhoneBook *phoneBook)
-{
+int	PhoneBook::showContact() const{
 	std::string input;
 	std::string	content;
+	Contact		currentContact;
 	int			id;
 
 	std::cout << "Contact ID : ";
@@ -82,18 +89,19 @@ int	showContact(const PhoneBook *phoneBook)
 		return (0);
 	}
 	id = input[0] - 48;
-	content = phoneBook->contactTab[id - 1].getContent("firstName");
+	currentContact = this->getContact(id - 1);
+	content = currentContact.getContent("firstName");
 	if (content.compare("") == 0) {
 		std::cout << "No contact for ID " << id << std::endl;
 		return (0);
 	}
-	displayContact(phoneBook->contactTab[id - 1], id);
+	displayContact(currentContact, id);
 	return (0);
 }
 
 int	PhoneBook::search() const {
-	displayBook(this);
-	if (showContact(this) == -1)
+	this->displayBook();
+	if (showContact() == -1)
 		return (-1);
 	return (0);
 }

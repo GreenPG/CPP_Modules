@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 09:19:01 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/04 15:56:36 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/04/05 17:42:37 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/05 17:54:23 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "Contact.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-class	PhoneBook	{
+int	main(void) {
+	ClapTrap	Jacky("Jacky");
+	ScavTrap	Unknown;
+	ScavTrap	John("John");
 
-public:
-	PhoneBook();
-
-	int		search() const;
-	int		addContact();
-private:
-	Contact	contactTab[8];
-	int		contactCount;
-	int		showContact() const;
-	Contact	getContact(int index) const;	
-	void	displayBook() const;
-};
+	Unknown.attack("Jacky");
+	Jacky.takeDamage(0);
+	Unknown.takeDamage(10);
+	Unknown.beRepaired(10);
+	John.attack("Unknown");
+	John.takeDamage(20);
+	John.beRepaired(20);
+	John.guardGate();
+}

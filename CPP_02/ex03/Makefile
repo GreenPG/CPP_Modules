@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/04 14:10:58 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/05 10:11:15 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,11 @@ CC = g++
 
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-NAME =	Fixed	
+NAME =	BSP	
 
 SRC =	main.cpp \
-		Fixed.cpp
+		Fixed.cpp \
+		Point.cpp
 
 OBJS = ${SRC:.cpp=.o}
 

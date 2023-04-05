@@ -6,18 +6,18 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/04 14:10:58 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/05 15:21:01 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++ 
 
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME =	Fixed	
+NAME =	ClapTrap 
 
 SRC =	main.cpp \
-		Fixed.cpp
+		ClapTrap.cpp
 
 OBJS = ${SRC:.cpp=.o}
 
@@ -33,7 +33,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 
 clean:
 	@n=1; \
-	for file in $(OBJS); do \
+	for file in $(OBJ); do \
 		if test -e $$file; then \
 			if [ $$n -eq 1 ]; then \
 				printf "Cleaning .o files \n"; \

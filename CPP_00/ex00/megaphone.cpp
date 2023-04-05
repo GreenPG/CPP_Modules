@@ -10,7 +10,7 @@ int	main(int ac, char **av)	{
 		for (int i = 1; i < ac; i++)	{
 			input = av[i];
 			for (size_t j = 0; j < input.length(); j++)
-				std::cout << (char)std::toupper(av[i][j]);
+				std::cout << (char)std::toupper(input[j]);
 		}
 		std::cout << std::endl;
 	}

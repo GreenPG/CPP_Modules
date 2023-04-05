@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 09:19:01 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/04 15:56:36 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/04/05 17:42:11 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/05 17:43:31 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "Contact.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-class	PhoneBook	{
+#include "ClapTrap.hpp"
 
-public:
-	PhoneBook();
+class ScavTrap: public ClapTrap
+{
+	 public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		~ScavTrap();
+		ScavTrap (const ScavTrap &copy);
+		ScavTrap &operator=(const ScavTrap&);
 
-	int		search() const;
-	int		addContact();
-private:
-	Contact	contactTab[8];
-	int		contactCount;
-	int		showContact() const;
-	Contact	getContact(int index) const;	
-	void	displayBook() const;
+		void	guardGate();
+	 private:
+		
 };
+
+#endif
