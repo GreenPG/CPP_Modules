@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 09:35:55 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/06 16:57:58 by gpasquet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap() {
@@ -19,13 +31,15 @@ ScavTrap::~ScavTrap(){
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy) {
-	*this = copy;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap &copy){
 	if (&copy != this)
 	{
-
+		this->_name = copy._name;
+		this->_hitPoints= copy._hitPoints;
+		this->_energyPoints = copy._energyPoints;
+		this->_attackDamage = copy._attackDamage;
 	}
 	return (*this);
 }

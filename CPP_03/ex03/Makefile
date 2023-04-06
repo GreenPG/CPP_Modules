@@ -6,17 +6,21 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2022/12/16 13:38:53 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/06 16:18:16 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++ 
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -Wshadow -std=c++98 
 
-NAME = #Executable name
+NAME =	DiamondTrap 
 
-SRC = #project sources
+SRC =	main.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp
 
 OBJS = ${SRC:.cpp=.o}
 
@@ -32,7 +36,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 
 clean:
 	@n=1; \
-	for file in $(OBJ); do \
+	for file in $(OBJS); do \
 		if test -e $$file; then \
 			if [ $$n -eq 1 ]; then \
 				printf "Cleaning .o files \n"; \

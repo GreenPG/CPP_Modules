@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 17:42:11 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 09:25:13 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/04/05 17:42:37 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/06 09:38:18 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap: public ClapTrap
-{
-	 public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap (const ScavTrap &copy);
-		ScavTrap &operator=(const ScavTrap&);
+int	main(void) {
+	ClapTrap	Jacky("Jacky");
+	ScavTrap	Unknown;
+	FragTrap	John("John");
 
-		void	attack(std::string target);
-		void	 takeDamage(unsigned int amount);
-		void	 beRepaired(unsigned int amount);
-		void	guardGate();
-	 private:
-		
-};
-
-#endif
+	Unknown.attack("Jacky");
+	Jacky.takeDamage(0);
+	Unknown.takeDamage(10);
+	Unknown.beRepaired(10);
+	John.attack("Unknown");
+	John.takeDamage(20);
+	John.beRepaired(20);
+	John.highFiveGuys();
+}

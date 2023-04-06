@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/05 17:42:11 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 09:25:13 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/04/06 15:21:04 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/04/06 16:47:25 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-
-#include "ClapTrap.hpp"
-
-class ScavTrap: public ClapTrap
+class DiamondTrap: public ScavTrap, public FragTrap
 {
 	 public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap (const ScavTrap &copy);
-		ScavTrap &operator=(const ScavTrap&);
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		~DiamondTrap();
+		DiamondTrap (const DiamondTrap &copy);
+		DiamondTrap &operator=(const DiamondTrap&);
 
 		void	attack(std::string target);
-		void	 takeDamage(unsigned int amount);
-		void	 beRepaired(unsigned int amount);
-		void	guardGate();
-	 private:
-		
+		void	whoAmI(void);
+	 protected:
+		std::string	_name;
+		std::string	_clapTrapName;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 };
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:42:11 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 09:25:13 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:24:00 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 	 public:
 		ScavTrap();
@@ -28,8 +28,6 @@ class ScavTrap: public ClapTrap
 		void	 takeDamage(unsigned int amount);
 		void	 beRepaired(unsigned int amount);
 		void	guardGate();
-	 private:
-		
 };
 
 #endif

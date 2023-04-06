@@ -6,15 +6,15 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/05 17:26:13 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/06 09:28:16 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = g++ 
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Wextra -Werror -std=c++98 
 
-NAME =	ClapTrap 
+NAME =	ScavTrap 
 
 SRC =	main.cpp \
 		ClapTrap.cpp \
@@ -34,7 +34,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 
 clean:
 	@n=1; \
-	for file in $(OBJ); do \
+	for file in $(OBJS); do \
 		if test -e $$file; then \
 			if [ $$n -eq 1 ]; then \
 				printf "Cleaning .o files \n"; \
