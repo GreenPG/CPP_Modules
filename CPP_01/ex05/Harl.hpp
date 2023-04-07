@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:22:28 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:22:28 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:05:07 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ class Harl
 		void error( void );
 };
 
-typedef void (Harl::*complainFunction)(void) ;
+ typedef void (Harl::*complainFunction)(void) ;

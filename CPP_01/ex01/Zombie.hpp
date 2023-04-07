@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:20:47 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:20:48 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:48:20 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 class Zombie
 {
 	 public:
-		Zombie(std::string name);
 		Zombie(void);
+		Zombie(std::string name);
 		~Zombie(void);
 
 		void	announce(void);

@@ -6,13 +6,12 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:35 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:21:36 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:59:30 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-#include "Weapon.hpp"
 
 int main()
 {

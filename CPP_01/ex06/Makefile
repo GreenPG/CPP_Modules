@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2022/12/16 13:38:53 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/07 14:41:48 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = HarlFilter 
+NAME = harlFilter 
 
 SRC = main.cpp \
 	  Harl.cpp 

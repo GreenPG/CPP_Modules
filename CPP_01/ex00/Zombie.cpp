@@ -6,15 +6,14 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:20:05 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:20:06 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:46:36 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)	{
-	this->name = name;
+Zombie::Zombie(std::string name): name(name) {
 	std::cout << this->name << " was created" << std::endl;
 }
 

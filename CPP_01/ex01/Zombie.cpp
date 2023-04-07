@@ -6,20 +6,19 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:20:32 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:20:33 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:48:42 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)	{
-	this->name = name;
-	std::cout << this->name << " was created" << std::endl;
-}
-
 Zombie::Zombie(void) {
 	std::cout << "Zombie with no name was created" << std::endl;
+}
+
+Zombie::Zombie(std::string name): name(name)	{
+	std::cout << this->name << " was created" << std::endl;
 }
 
 Zombie::~Zombie(void)	{

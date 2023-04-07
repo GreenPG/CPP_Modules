@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:18 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:21:19 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:56:10 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon) {
 }
 
 HumanA::~HumanA(void) {
-
 }
 
 void		HumanA::attack() const {

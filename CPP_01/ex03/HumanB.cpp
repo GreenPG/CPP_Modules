@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:27 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:21:27 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:57:09 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ HumanB::HumanB(std::string name) : name(name) {
 }
 
 HumanB::~HumanB(void) {
-
 }
 
 void		HumanB::setWeapon(Weapon &weapon) {

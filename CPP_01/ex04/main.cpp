@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:58 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:22:03 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:49:32 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	modifyInput(std::string &input, std::string s1, std::string s2) {
 	while (pos != std::string::npos) {
 		input.erase(pos, s1.length());
 		input.insert(pos, s2);
-		pos = input.find(s1);
+		pos += s2.length();
+		pos = input.find(s1, pos);
 	}
 }
 
@@ -57,6 +58,8 @@ int	main(int ac , char **av) {
 		std::cout << "Expected three parameters" << std::endl;
 		return (1);
 	}
+	if ((std::string)av[2] == "")
+		return (0);
 	input = getFileContent(av[1]);
 	if (input.empty() == true)
 		return (1);

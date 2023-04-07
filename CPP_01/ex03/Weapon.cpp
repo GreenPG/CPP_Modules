@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:39 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:21:40 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:41:24 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ Weapon::~Weapon(void) {
 
 }
 
-const std::string	Weapon::getType(void) const {
-	const std::string	typeRef = this->type;
+const std::string	&Weapon::getType(void) const {
+	const std::string	&typeRef = this->type;
 	return (typeRef);
 }
 
