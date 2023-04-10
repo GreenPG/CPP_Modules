@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2022/12/16 13:38:53 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/10 15:12:48 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = #Executable name
+NAME = srcs/main.cpp \
+	   srcs/AMateria.cpp \
+	   srcs/Ice.cpp \
+	   srcs/Cure.cpp \
+	   srcs/Character.cpp \
+	   srcs/MateriaSource.cpp
 
 SRC = #project sources
 

@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/07 14:41:48 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/10 09:33:10 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,8 @@ $(NAME):	$(LIBFT) $(OBJS)
 	@printf '\e[1;37m%-6s\e[m' "Compilation complete"
 
 clean:
-
-fclean: clean
 	@n=1; \
-	for file in $(OBJ); do \
+	for file in $(OBJS); do \
 		if test -e $$file; then \
 			if [ $$n -eq 1 ]; then \
 				printf "Cleaning .o files \n"; \
@@ -45,7 +43,7 @@ fclean: clean
 		fi \
 	done
 
-re: fclean all
+fclean: clean
 	@n=1; \
 	if test -e ${NAME}; then \
 		if [ $$n -eq 1 ]; then \
@@ -55,4 +53,6 @@ re: fclean all
 		rm ${NAME}; \
 	fi
 
+re: fclean all
+	
 .PHONY: all clean fclean re

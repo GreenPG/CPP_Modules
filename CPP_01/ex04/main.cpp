@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:58 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/07 14:49:32 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:15:06 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ std::string	getFileContent(const char *fileName)
 		std::cout << "Failed to open input file" << std::endl;
 		return ("");
 	}
-	inputFile >> input;
 	while (std::getline(inputFile, tmp)) {
 		input.append(tmp);
 		input.append("\n");
 	}
-	if (input.empty() == true)
+	if (input.size() == 0)
 		return ("");
 	input.erase(input.end() - 1);
 	inputFile.close();
