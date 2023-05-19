@@ -5,35 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 11:03:33 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/10 15:13:41 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/05/19 15:37:43 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/05/19 15:47:02 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AMateria.hpp"
+#include "AMateria.hpp"
 
-AMateria::AMateria(void) {
+AMateria::AMateria(){
 }
 
-AMateria::AMateria(std::string const & type): type(type) {
+AAMateria::Materia(std::string const & type){
+
 }
 
-AMateria::~AMateria(void) {
+AMateria::~AMateria(){
 }
 
-AMateria::AMateria (const AMateria &copy) {
-	this->type = copy.type;
+AMateria::AMateria(const AMateria &copy){
+	*this = copy;
 }
 
-AMateria &AMateria::operator=(const AMateria &copy) {
+AMateria & AMateria::operator=(const AMateria &copy){
 	if (&copy != this)
 	{
-		this->type = copy.type;
+
 	}
 	return (*this);
 }
-	
-std::string const & AMateria::getType() const{
+
+std::string const & AMateria::getType() const {
 	return (this->type);
-} //
-  //Returns the materia type
+}//Returns the materia type

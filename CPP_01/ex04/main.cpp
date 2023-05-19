@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:21:58 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/10 14:15:06 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/04/12 08:53:08 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ std::string	getFileContent(const char *fileName)
 		input.append(tmp);
 		input.append("\n");
 	}
-	if (input.size() == 0)
+	if (input.size() == 0) {
+		std::cout << "The input file is empty. Nothing to be done" << std::endl;
 		return ("");
+	}
 	input.erase(input.end() - 1);
 	inputFile.close();
 	return (input);
@@ -57,8 +59,10 @@ int	main(int ac , char **av) {
 		std::cout << "Expected three parameters" << std::endl;
 		return (1);
 	}
-	if ((std::string)av[2] == "")
+	if ((std::string)av[2] == "") {
+		std::cout << "Non empty string expected as second parameters" << std::endl;
 		return (0);
+	}
 	input = getFileContent(av[1]);
 	if (input.empty() == true)
 		return (1);

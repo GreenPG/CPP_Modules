@@ -5,29 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 15:30:40 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/10 15:42:27 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/05/19 15:44:09 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/05/19 16:04:24 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
-
 #include "AMateria.hpp"
 
-class Ice: public AMateria	
+class Ice : public AMateria
 {
 	 public:
 		Ice();
-		Ice(std::string const & type);
 		~Ice();
 		Ice (const Ice &copy);
 		Ice &operator=(const Ice&);
 
-		AMateria* clone() const;
+		std::string const & getType() const; //Returns the materia type
+		Ice* clone() const;
 		void use(ICharacter& target);
 	 private:
-		std::string type;
+		std::string	type;
 };
-
-#endif

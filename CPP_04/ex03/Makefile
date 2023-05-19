@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/10 15:12:48 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/04/11 16:30:40 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = srcs/main.cpp \
-	   srcs/AMateria.cpp \
-	   srcs/Ice.cpp \
-	   srcs/Cure.cpp \
-	   srcs/Character.cpp \
-	   srcs/MateriaSource.cpp
+NAME = Materia 
 
-SRC = #project sources
+SRC =	srcs/main.cpp \
+	 	srcs/AMateria.cpp \
+		srcs/Character.cpp \
+	 	srcs/Ice.cpp \
+		srcs/Cure.cpp \
+		srcs/MateriaSource.cpp
 
 OBJS = ${SRC:.cpp=.o}
 
@@ -37,7 +37,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 
 clean:
 	@n=1; \
-	for file in $(OBJ); do \
+	for file in $(OBJS); do \
 		if test -e $$file; then \
 			if [ $$n -eq 1 ]; then \
 				printf "Cleaning .o files \n"; \
