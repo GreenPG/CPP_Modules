@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:23:09 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/03 09:23:17 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/28 09:55:02 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,4 @@ int		Fixed::getRawBits( void ) const {
 void	Fixed::setRawBits( int const raw ) {
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
-}
-
-class MyClass
-{
-	 public:
-		MyClass();
-		~MyClass();
-		MyClass (const MyClass &copy);
-		MyClass &operator=(const MyClass&);
-	 private:
-		
 };

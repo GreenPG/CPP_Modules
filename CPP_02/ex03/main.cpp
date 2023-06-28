@@ -30,6 +30,9 @@ int	main(void) {
 	Point const	point1(1,0.5);
 	Point const	point2(-1,1);
 	Point const	point3(0,1);
+	Point const	point4(2.5,2.5);
+
+	std::cout << "A: x = " << a.getX() << " y = " << a.getY() << std::endl;	
 
 	std::cout << "Triangle A(0, 0)B(0, 2)C(2, 0)" << std::endl;
 	std::cout << "Point 1 (1, 0.5)" << std::endl;
@@ -43,6 +46,11 @@ int	main(void) {
 	else
 		std::cout << "The point is not in the triangle" << std::endl;
 	std::cout << "Point 3 (0, 1)" << std::endl;
+	if (bsp(a, b, c, point3) == true)
+		std::cout << "The point is in the triangle" << std::endl;
+	else
+		std::cout << "The point is not in the triangle" << std::endl;
+	std::cout << "Point 4 (2,5, 2,5)" << std::endl;
 	if (bsp(a, b, c, point3) == true)
 		std::cout << "The point is in the triangle" << std::endl;
 	else

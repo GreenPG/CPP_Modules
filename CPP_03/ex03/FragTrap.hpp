@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 09:31:56 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 15:24:21 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:43:37 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRAGTRAP_HPP
@@ -14,7 +14,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap: virtual public ClapTrap
+class FragTrap: public ClapTrap
 {
 	 public:
 		FragTrap();
@@ -27,6 +27,19 @@ class FragTrap: virtual public ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		void	highFiveGuys(void);
+
+		/* Getter */
+		int			getHitPoints() const;
+		int			getEnergyPoints() const;
+		int			getAttackDamage() const;
+		std::string	getName() const;
+
+	private:
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
+		
 };
 
 #endif

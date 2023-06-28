@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 09:23:40 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/04 17:29:32 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/28 10:06:04 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed		&Fixed::min(Fixed &f1, Fixed &f2) {
-	if (f1 < f2)
+	if (f1.toFloat() < f2.toFloat())
 		return (f1);
 	else
 		return (f2);
@@ -136,7 +136,7 @@ Fixed const	&Fixed::min(Fixed const &f1, Fixed const &f2) {
 }
 
 Fixed		&Fixed::max(Fixed &f1, Fixed &f2) {
-	if (f1 > f2)
+	if (f1.toFloat() > f2.toFloat())
 		return (f1);
 	else
 		return (f2);

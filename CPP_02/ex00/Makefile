@@ -6,11 +6,11 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/04 14:11:24 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/06/28 09:54:47 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = g++ 
+CC = c++ 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -32,16 +32,7 @@ $(NAME):	$(LIBFT) $(OBJS)
 	@printf '\e[1;37m%-6s\e[m' "Compilation complete"
 
 clean:
-	@n=1; \
-	for file in $(OBJ); do \
-		if test -e $$file; then \
-			if [ $$n -eq 1 ]; then \
-				printf "Cleaning .o files \n"; \
-			fi; \
-			n=$$((n + 1)); \
-			rm $$file; \
-		fi \
-	done
+	rm -rf ${OBJS}
 
 fclean: clean
 	@n=1; \

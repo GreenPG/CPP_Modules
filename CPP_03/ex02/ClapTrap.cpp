@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 09:34:47 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 09:35:35 by gpasquet         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 #include <iostream>
 
@@ -30,6 +18,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy){
 	this->_hitPoints= copy._hitPoints;
 	this->_energyPoints = copy._energyPoints;
 	this->_attackDamage = copy._attackDamage;
+	std::cout << "A ClapTrap called " << this->_name << " has been created by copy" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &copy){
@@ -40,6 +29,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &copy){
 		this->_energyPoints = copy._energyPoints;
 		this->_attackDamage = copy._attackDamage;
 	}
+	std::cout << "A ClapTrap called " << this->_name << " has been assigned by copy" << std::endl;
 	return (*this);
 }
 
@@ -69,4 +59,20 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	this->_energyPoints--;
 	std::cout << "ClapTrap " << this->_name << " is repaired of " << amount << " hit points. He now has " << this->_hitPoints << " hits points" << std::endl;
 	}
+}
+
+int			ClapTrap::getHitPoints() const {
+	return (this->_hitPoints);	
+}
+
+int			ClapTrap::getEnergyPoints() const {
+	return (this->_energyPoints);	
+}
+
+int			ClapTrap::getAttackDamage() const {
+	return (this->_attackDamage);	
+}
+
+std::string	ClapTrap::getName() const {
+	return (this->_name);
 }
