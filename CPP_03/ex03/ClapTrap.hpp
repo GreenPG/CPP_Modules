@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:41:38 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/28 16:15:25 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 08:58:13 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class ClapTrap
 		int			getEnergyPoints() const;
 		int			getAttackDamage() const;
 		std::string	getName() const;
+	 
 	 protected:
 		std::string	_name;
 		int			_hitPoints;

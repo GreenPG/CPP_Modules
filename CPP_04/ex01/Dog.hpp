@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:32:18 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 13:51:31 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:52:43 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Dog: public Animal
 
 		void		makeSound(void) const;
 		std::string	getType(void) const;
-		std::string	getIdea() const;
-		void		setIdeas(std::string idea);
+		std::string	getIdea(int index) const;
+		void		setIdeas(int index, std::string idea);
 	private:
 		Brain*	brain;
 };

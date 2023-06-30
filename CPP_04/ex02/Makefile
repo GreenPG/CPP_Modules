@@ -6,7 +6,7 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/09 11:40:18 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/06/30 10:58:13 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 NAME = 	Animals 
 
 SRC =	main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp	\
 		Cat.cpp \
 		Brain.cpp

@@ -6,26 +6,17 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:29 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 17:34:58 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/30 11:06:59 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 Cat::Cat() {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->type = "Cat";
 	this->brain = new Brain;
-}
-
-Cat::Cat(std::string idea) {
-	std::cout << "Cat idea constructor called" << std::endl;
-	this->type = "Cat";
-	this->brain	= new Brain;
-	for (int i = 0; i < 100; i++) {
-		this->brain->setIdea(i, idea);
-	}
 }
 
 Cat::~Cat(){
@@ -58,6 +49,10 @@ std::string	Cat::getType(void) const {
 	return (this->type);
 }
 
-Brain		*Cat::getBrain(void) const{
-	return (this->brain);
+std::string	Cat::getIdea(int index) const {
+	return(this->brain->getIdea(index));
+}
+
+void		Cat::setIdeas(int index, std::string idea) {
+	this->brain->setIdea(index, idea);
 }

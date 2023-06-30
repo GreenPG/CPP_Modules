@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 09:31:56 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:37 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 08:58:07 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRAGTRAP_HPP
@@ -34,7 +34,7 @@ class FragTrap: public ClapTrap
 		int			getAttackDamage() const;
 		std::string	getName() const;
 
-	private:
+	 protected:
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;

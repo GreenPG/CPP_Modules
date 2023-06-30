@@ -6,17 +6,17 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:27:27 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 10:45:59 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:11:09 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(){
+Animal::Animal(): type("Undefined animal") {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::~Animal(){
+Animal::~Animal() {
 	std::cout << "Animal default destructor called" << std::endl;
 }
 
@@ -30,6 +30,7 @@ Animal & Animal::operator=(const Animal &copy){
 	{
 		this->type = copy.type;
 	}
+	std::cout << "Animal assigmenent by copy operator called" << std::endl;
 	return (*this);
 }
 

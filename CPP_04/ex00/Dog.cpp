@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:34:20 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 10:55:32 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:26:01 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::~Dog() {
 	std::cout << "Dog default destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy): Animal(){
+Dog::Dog(const Dog &copy): Animal(copy){
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->type = copy.type;
 }
@@ -31,6 +31,7 @@ Dog & Dog::operator=(const Dog &copy){
 	{
 		this->type = copy.type;
 	}
+	std::cout << "Dog assignement by copy call" << std::endl;
 	return (*this);
 }
 

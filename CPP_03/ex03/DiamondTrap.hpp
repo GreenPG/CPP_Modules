@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:21:04 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 16:47:25 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 09:48:05 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "FragTrap.hpp"
@@ -23,9 +23,16 @@ class DiamondTrap: public ScavTrap, public FragTrap
 
 		void	attack(std::string target);
 		void	whoAmI(void);
-	 protected:
+		
+		/* Getter */
+		int			getHitPoints() const;
+		int			getEnergyPoints() const;
+		int			getAttackDamage() const;
+		std::string	getName() const;
+		std::string	getClapName() const;
+	 private:
 		std::string	_name;
-		std::string	_clapTrapName;
+		std::string	_clapName;
 		int			_hitPoints;
 		int			_energyPoints;
 		int			_attackDamage;

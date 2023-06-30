@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:22:17 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/06 16:59:04 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:48:50 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,67 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ScavTrap(), FragTrap(), _hitPoints(FragTrap::_hitPoints), _energyPoints(ScavTrap::_energyPoints), _attackDamage(FragTrap::_attackDamage) {
-	this->_clapTrapName = this->ClapTrap::_name;
-	this->_clapTrapName.append("_clap_name");
+DiamondTrap::DiamondTrap(): ScavTrap(), FragTrap(), _name("Unknown"), _hitPoints(FragTrap::_hitPoints), _energyPoints(ScavTrap::_energyPoints), _attackDamage(FragTrap::_attackDamage) {
+	this->_clapName = "Unknown_clap_name";
 	std::cout << "An unknown DiamondTrap has been created" << std::endl;
-}
+} 
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), FragTrap(name), _name(name), _clapTrapName(ClapTrap::_name.append("_clap_name")), _hitPoints(FragTrap::_hitPoints), _energyPoints(ScavTrap::_energyPoints), _attackDamage(FragTrap::_attackDamage) {
-	std::cout << "A DiamondTrap called " << this->_name	<< " has been created" << std::endl;
+DiamondTrap::DiamondTrap(std::string name): ScavTrap(name), FragTrap(name), _name(name), _hitPoints(FragTrap::_hitPoints), _energyPoints(ScavTrap::_energyPoints), _attackDamage(FragTrap::_attackDamage) {
+	this->_clapName = name.append("_clap_name");
+	std::cout << "A DiamondTrap named " << this->_name << " has been created" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap " << this->_name << " has been destroyed" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " has been destructed" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy): ClapTrap(copy), ScavTrap(copy), FragTrap(copy){
+DiamondTrap::DiamondTrap(const DiamondTrap &copy): ScavTrap(copy), FragTrap(copy) {
 	this->_name = copy._name;
+	this->_clapName = copy._clapName;
 	this->_hitPoints = copy._hitPoints;
 	this->_energyPoints = copy._energyPoints;
 	this->_attackDamage = copy._attackDamage;
+	std::cout << "A DiamondTrap called " << this->_name << " has been created by copy" << std::endl;
 }
 
-DiamondTrap & DiamondTrap::operator=(const DiamondTrap &copy){
+DiamondTrap & DiamondTrap::operator=(const DiamondTrap &copy) {
 	if (&copy != this)
 	{
 		this->_name = copy._name;
-		this->_clapTrapName = copy._clapTrapName;
-		this->_hitPoints= copy._hitPoints;
+		this->_clapName = copy._clapName;
+		this->_hitPoints = copy._hitPoints;
 		this->_energyPoints = copy._energyPoints;
 		this->_attackDamage = copy._attackDamage;
 	}
+	std::cout << "A DiamondTrap called " << this->_name << " has been assigned by copy" << std::endl;
 	return (*this);
 }
 
-void	DiamondTrap::whoAmI(void) {
-	std::cout << "I am " << this->_name << "( " << this->_clapTrapName << " )" << std::endl;
+int			DiamondTrap::getHitPoints() const {
+	return (this->_hitPoints);
+}
+
+int			DiamondTrap::getEnergyPoints() const {
+	return (this->_energyPoints);
+}
+
+int			DiamondTrap::getAttackDamage() const {
+	return (this->_attackDamage);
+
+}
+
+std::string	DiamondTrap::getName() const {
+	return (this->_name);
+}
+
+std::string	DiamondTrap::getClapName() const {
+	return (this->_clapName);
 }
 
 void	DiamondTrap::attack(std::string target) {
-	this->ScavTrap::attack(target);
+	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI(void) {
+	std::cout << "I am " << this->_name << ", also known has " << this->_clapName << std::endl;
 }

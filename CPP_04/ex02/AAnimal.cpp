@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:27:27 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 16:31:26 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/30 10:57:58 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 AAnimal::AAnimal(){
 	std::cout << "AAnimal default constructor called" << std::endl;
@@ -35,8 +35,4 @@ AAnimal & AAnimal::operator=(const AAnimal &copy){
 
 std::string	AAnimal::getType(void) const {
 	return (this->type);
-}
-
-void	AAnimal::makeSound(void) const {
-	std::cout << "Undefined animal noise" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:29 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 10:55:14 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:22:52 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Cat & Cat::operator=(const Cat &copy){
 	{
 		this->type = copy.type;
 	}
+	std::cout << "Cat assignement by copy operator called" << std::endl;
 	return (*this);
 }
 

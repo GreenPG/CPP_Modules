@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:42:11 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:11 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 08:57:44 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ScavTrap: public ClapTrap
 		int			getEnergyPoints() const;
 		int			getAttackDamage() const;
 		std::string	getName() const;
-	 private:
+	 protected:
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;

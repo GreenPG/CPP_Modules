@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:34:20 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 13:52:19 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/06/29 15:26:33 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,25 @@ Dog::Dog(): Animal(){
 	this->brain	= new Brain;
 }
 
-Dog::Dog(std::string idea): Animal(){
-	std::cout << "Dog idea constructor called" << std::endl;
-	this->type = "Dog";
-	this->brain	= new Brain;
-	for (int i = 0; i < 100; i++) {
-		this->brain->setIdea(i, idea);
-	}
-}
-
 Dog::~Dog() {
 	delete this->brain;
 	std::cout << "Dog default destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy): Animal(){
+Dog::Dog(const Dog &copy): Animal(copy){
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->type = copy.type;
-	this->brain = new Brain;
-	for (int i = 0; i < 100; i++) {
-		this->brain->setIdea(i, copy.brain->getIdea(i));
-	}
+	this->brain = new Brain(*copy.brain);
 }
 
 Dog & Dog::operator=(const Dog &copy){
 	if (&copy != this)
 	{
 		this->type = copy.type;
-		for (int i = 0; i < 100; i++) {
-			this->brain->setIdea(i, copy.brain->getIdea(i));
-		}
+		delete this->brain;
+		this->brain = new Brain(*copy.brain);
 	}
+	std::cout << "Dog assignement by copy operator called" << std::endl;
 	return (*this);
 }
 
@@ -60,12 +48,10 @@ std::string	Dog::getType(void) const {
 	return(this->type);
 }
 
-std::string	Dog::getIdea() const {
-	return(this->brain->getIdea(0));
+std::string	Dog::getIdea(int index) const {
+	return(this->brain->getIdea(index));
 }
 
-void		Dog::setIdeas(std::string idea) {
-	for (int i = 0; i < 100; i++) {
-		this->brain->setIdea(i, idea);
-	}
+void		Dog::setIdeas(int index, std::string idea) {
+	this->brain->setIdea(index, idea);
 }
