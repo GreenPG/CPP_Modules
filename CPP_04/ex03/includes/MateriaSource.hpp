@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 15:44:09 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 08:40:38 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/07/04 09:03:17 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/07/04 09:08:06 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-# include "../includes/ICharacter.hpp"
-# include "../includes/AMateria.hpp"
+# include "../includes/IMateriaSource.hpp"
 
-class Ice : public AMateria
+class MateriaSource: public IMateriaSource
 {
 	 public:
-		Ice();
-		~Ice();
-		Ice (const Ice &copy);
-		Ice &operator=(const Ice&);
+		MateriaSource();
+		~MateriaSource();
+		MateriaSource (const MateriaSource &copy);
+		MateriaSource &operator=(const MateriaSource&);
 
-		std::string const & getType() const; //Returns the materia type
-		Ice* clone() const;
-		void use(ICharacter& target);
+		void learnMateria(AMateria*) = 0;
+		AMateria* createMateria(std::string const & type) = 0;
 	 private:
-		std::string	type;
+		AMateria	*inventory[4];	
 };
 
 #endif

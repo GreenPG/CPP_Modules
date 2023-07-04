@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:29 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/30 11:06:59 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/03 08:52:50 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ Cat::~Cat(){
 Cat::Cat(const Cat &copy): AAnimal(copy) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	this->type = copy.type;
-	this->brain = new Brain;
-	for (int i = 0; i < 100; i++) {
-		this->brain->setIdea(i, copy.brain->getIdea(i));
-	}
+	this->brain = new Brain(*copy.brain);
 }
 
 Cat & Cat::operator=(const Cat &copy){
 	if (&copy != this)
 	{
 		this->type = copy.type;
+		if (this->brain)
+			delete this->brain;
+		this->brain = new Brain(*copy.brain);
 	}
 	return (*this);
 }

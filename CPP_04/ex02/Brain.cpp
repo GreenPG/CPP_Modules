@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 11:30:46 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 17:34:13 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/03 08:51:25 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Brain::Brain(){
 	std::cout << "Brain default constructor called" << std::endl;
 	for (int i = 0; i < 100; i++) {
-		this->ideas[i] = "";
+		this->ideas[i] = "some idea";
 	}
 }
 

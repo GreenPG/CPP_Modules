@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 15:44:09 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 08:40:38 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/07/03 17:59:56 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/07/03 18:01:04 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "../includes/Cure.hpp"
+#include "../includes/Ice.hpp"
+#include "../includes/Character.hpp"
 
-# include "../includes/ICharacter.hpp"
-# include "../includes/AMateria.hpp"
+int	main(void) {
 
-class Ice : public AMateria
-{
-	 public:
-		Ice();
-		~Ice();
-		Ice (const Ice &copy);
-		Ice &operator=(const Ice&);
-
-		std::string const & getType() const; //Returns the materia type
-		Ice* clone() const;
-		void use(ICharacter& target);
-	 private:
-		std::string	type;
-};
-
-#endif
+}

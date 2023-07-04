@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 15:47:19 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/05/19 15:55:52 by gpasquet         ###   ########.fr       */
+/*   Created: 2023/07/03 09:48:37 by gpasquet          #+#    #+#             */
+/*   Updated: 2023/07/04 08:57:41 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef CURE_HPP 
+# define CURE_HPP
 
-Ice::Ice(){
-	this->type = "type";
-}
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-Ice::Ice(std::string const & type): type(type) {
-}
+class Cure: public AMateria
+{
+	 public:
+		Cure();
+		~Cure();
+		Cure (const Cure &copy);
+		Cure &operator=(const Cure&);
 
-Ice::~Ice(){
-}
+		std::string const & getType() const;
+		Cure				*clone() const;
+		void				use(ICharacter &target);
 
-Ice::Ice(const Ice &copy){
-	*this = copy;
-}
+	 private:
+		std::string	type;	
+};
 
-Ice & Ice::operator=(const Ice &copy){
-	if (&copy != this)
-	{
-
-	}
-	return (*this);
-}
-
-std::string const & Ice::getType() const {
-	return (this->type);
-}//Returns the materia type
-
-Ice* Ice::clone() const;
-void Ice::use(ICharacter& target);
+#endif

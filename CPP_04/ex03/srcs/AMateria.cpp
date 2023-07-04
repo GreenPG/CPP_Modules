@@ -6,34 +6,36 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:37:43 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/05/19 15:47:02 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/04 08:37:42 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../includes/AMateria.hpp"
 
 AMateria::AMateria(){
+	std::cout << "AMateria default constructor called" << std::endl;
 }
 
-AAMateria::Materia(std::string const & type){
-
+AMateria::AMateria(std::string const & type): type(type) {
+	std::cout << "AMateria type constructor called" << std::endl;
 }
 
-AMateria::~AMateria(){
+AMateria::~AMateria() {
+	std::cout << "AMateria destructor called";
 }
 
 AMateria::AMateria(const AMateria &copy){
-	*this = copy;
+	this->type = copy.type;
 }
 
 AMateria & AMateria::operator=(const AMateria &copy){
 	if (&copy != this)
 	{
-
+		this->type = copy.type;
 	}
 	return (*this);
 }
 
-std::string const & AMateria::getType() const {
+	std::string const & AMateria::getType() const {
 	return (this->type);
-}//Returns the materia type
+}
