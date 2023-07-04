@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 09:31:56 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:37 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/04 15:20:16 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRAGTRAP_HPP
@@ -23,23 +23,8 @@ class FragTrap: public ClapTrap
 		FragTrap (const FragTrap &copy);
 		FragTrap &operator=(const FragTrap&);
 
-		void	attack(std::string target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	highFiveGuys(void);
 
-		/* Getter */
-		int			getHitPoints() const;
-		int			getEnergyPoints() const;
-		int			getAttackDamage() const;
-		std::string	getName() const;
-
-	private:
-		std::string	_name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
-		
 };
 
 #endif
