@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:36:50 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 08:34:27 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:22:48 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AMateria
 	 public:
 		AMateria();
 		AMateria(std::string const & type);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria (const AMateria &copy);
 		AMateria &operator=(const AMateria&);
 

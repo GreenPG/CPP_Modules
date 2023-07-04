@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 09:03:17 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 09:08:06 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/04 16:32:06 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class MateriaSource: public IMateriaSource
 		MateriaSource (const MateriaSource &copy);
 		MateriaSource &operator=(const MateriaSource&);
 
-		void learnMateria(AMateria*) = 0;
-		AMateria* createMateria(std::string const & type) = 0;
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 	 private:
 		AMateria	*inventory[4];	
 };
