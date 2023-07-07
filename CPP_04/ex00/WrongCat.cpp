@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 11:02:21 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/04/09 11:12:35 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/06 09:53:54 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,8 @@ WrongCat & WrongCat::operator=(const WrongCat &copy){
 		this->type = copy.getType();
 	}
 	return (*this);
+}
+
+void	WrongCat::makeSound(void) const {
+	std::cout << "Wrong cat sound" << std::endl;
 }

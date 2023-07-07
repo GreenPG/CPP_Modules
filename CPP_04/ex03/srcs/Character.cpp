@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:24:18 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 17:52:11 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:49:34 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,18 @@ std::string	const & Character::getName() const {
 }
 
 void				Character::equip(AMateria* m) {
+	if (!m) {
+		std::cout << "This materia doesn't exist" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++) {
+		if (this->inventory[i] && this->inventory[i] == m) {
+			std::cout << "This materia has already been learn" << std::endl;
+			return ;
+		}
 		if (!this->inventory[i]) {
 			this->inventory[i] = m;
+			std::cout << this->getName() << " equip materia " << m->getType() << std::endl;
 			return ;
 		}
 	}
@@ -77,16 +86,35 @@ void				Character::equip(AMateria* m) {
 }
 
 void				Character::unequip(int idx) {
-	if (this->inventory[idx])
+	if (idx > 3) {
+		std::cout << "Index must be between 0 and 3" << std::endl;
+	}
+	else if (this->inventory[idx]) {
+		std::cout << this->getName() << " unequip materia " << this->inventory[idx]->getType() << std::endl;
 		inventory[idx] = NULL;
+	}
 	else
 		std::cout << "No materia at this index" << std::endl;
 }
 
 void				Character::use(int idx, ICharacter& target) {
-	if (this->inventory[idx]) {
+	if (idx > 3) {
+		std::cout << "Index must be between 0 and 3" << std::endl;
+	}
+	else if (this->inventory[idx]) {
 		this->inventory[idx]->use(target);
 	}
 	else
 		std::cout << "No materia at this index" << std::endl;
+}
+
+AMateria			*Character::getMateria(int idx) {
+	if (idx > 3) {
+		std::cout << "Index must be between 0 and 3" << std::endl;
+		return (NULL);
+	}
+	if (this->inventory[idx])
+		return (this->inventory[idx]);
+	std::cout << "No materia at this index" << std::endl;
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 11:30:46 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/03 08:51:25 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:46:28 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,15 @@ Brain & Brain::operator=(const Brain &copy){
 }
 
 std::string	Brain::getIdea(int index) const {
+	if (index < 0 || index > 99) 
+		return ("Something out of this brain");
 	return (this->ideas[index]);
 }
 
 void	Brain::setIdea(int index, std::string newIdea) {
+	if (index < 0 || index > 99) {
+		std::cout << "Index must be between 0 and 99" << std::endl;
+		return ;
+	}
 	this->ideas[index] = newIdea;
 }

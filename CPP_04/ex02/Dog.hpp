@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:32:18 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/30 11:01:53 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/05 09:10:02 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Dog: public AAnimal
 		Dog &operator=(const Dog&);
 
 		void		makeSound(void) const;
-		std::string	getType(void) const;
 		std::string	getIdea(int index) const;
 		void		setIdeas(int index, std::string idea);
 	private:

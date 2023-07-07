@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:34:20 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/03 08:53:28 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/05 09:09:59 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ Dog & Dog::operator=(const Dog &copy){
 
 void	Dog::makeSound(void) const {
 	std::cout << "Woof woof woof" << std::endl;
-}
-
-std::string	Dog::getType(void) const {
-	return(this->type);
 }
 
 std::string	Dog::getIdea(int index) const {

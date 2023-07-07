@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 09:04:48 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 17:28:54 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:50:31 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void		MateriaSource::learnMateria(AMateria* copy) {
 			return ;
 		}
 	}
+	delete copy;
 	std::cout << "No room in materia source  inventory" << std::endl;
 }
 

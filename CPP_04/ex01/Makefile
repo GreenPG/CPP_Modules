@@ -6,11 +6,11 @@
 #    By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 13:30:55 by gpasquet          #+#    #+#              #
-#    Updated: 2023/04/09 11:40:18 by gpasquet         ###   ########.fr        #
+#    Updated: 2023/07/07 15:25:51 by gpasquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = g++ 
+CC = c++ 
 
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:43:31 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/29 14:41:56 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/05 09:05:59 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,21 @@ int main()
 		delete meti;
 		delete doggy;
 		delete catty;
+	}
+
+	std::cout << std::endl;
+
+	{
+		std::cout << "*** WrongAnimal tests ***" << std::endl << std::endl;
+
+		Animal	*cat = new Cat();
+		WrongAnimal	*wrongCat = new WrongCat();
+
+		cat->makeSound();
+		wrongCat->makeSound();
+
+		delete cat;
+		delete wrongCat;
 
 	}
 	return 0;

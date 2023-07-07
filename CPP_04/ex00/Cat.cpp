@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:29 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/29 14:22:52 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/05 09:02:25 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,4 @@ Cat & Cat::operator=(const Cat &copy){
 
 void		Cat::makeSound(void) const {
 	std::cout << "Meow meow meow" << std::endl;
-}
-
-std::string	Cat::getType(void) const {
-	return (this->type);
 }

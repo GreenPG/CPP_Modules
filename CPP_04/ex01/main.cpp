@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:43:31 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/06/30 10:40:14 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:45:50 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int main()
 		
 		cat->makeSound();
 		std::cout << "Cat thinks of " << cat->getIdea(20) << std::endl;
+		std::cout << "Cat thinks of " << cat->getIdea(-20) << std::endl;
 		dog->makeSound();
 		std::cout << "Dog thinks of " << dog->getIdea(20) << std::endl;
+		std::cout << "Dog thinks of " << dog->getIdea(200) << std::endl;
 		
 		std::cout << std::endl;
 

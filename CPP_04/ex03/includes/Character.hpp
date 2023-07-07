@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:21:00 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 08:39:16 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/05 08:35:04 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Character: public ICharacter
 		void				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter& target);
-
+		AMateria			*getMateria(int idx);
 
 	 private:
 		AMateria	*inventory[4];

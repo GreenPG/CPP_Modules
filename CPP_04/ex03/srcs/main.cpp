@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:59:56 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/04 17:54:20 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:47:43 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,47 @@ int	main(void) {
 		delete ch1;
 		delete ch2;
 		delete tmp;
+	}
+
+	std::cout << std::endl;
+
+	{
+		std::cout << "*** Tests ***" << std::endl << std::endl;
+	
+		IMateriaSource	*src = new MateriaSource();
+		src->learnMateria(new Ice);
+		src->learnMateria(new Cure);
+		src->learnMateria(new Cure);
+		src->learnMateria(new Cure);
+		src->learnMateria(new Cure);
+
+		Character	*me = new Character("me");
+		ICharacter	*evilDude = new	Character("evil dude");
+
+		AMateria	*tmp;
+		tmp = src->createMateria("ice");
+		me->equip(tmp);
+		tmp = src->createMateria("cure");
+		me->equip(tmp);
+		me->equip(tmp);
+		tmp = src->createMateria("something");
+		me->equip(tmp);
+
+		me->use(0, *evilDude);
+		me->use(1, *evilDude);
+		me->use(2, *evilDude);
+		me->use(3, *evilDude);
+		me->use(4, *evilDude);
+
+		tmp = me->getMateria(0);
+		me->unequip(0);
+		delete tmp;
+		me->unequip(3);
+		me->unequip(6);
+
+		delete src;
+		delete me;
+		delete evilDude;
 	}
 
 	return 0;
