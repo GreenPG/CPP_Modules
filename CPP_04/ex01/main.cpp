@@ -6,7 +6,7 @@
 /*   By: gpasquet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:43:31 by gpasquet          #+#    #+#             */
-/*   Updated: 2023/07/07 15:45:50 by gpasquet         ###   ########.fr       */
+/*   Updated: 2023/07/08 15:33:52 by gpasquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ int main()
 		std::cout << std::endl;
 
 		cat->setIdeas(4, "conquering the world");
+		cat->setIdeas(400, "conquering the world");
 		dog->setIdeas(4, "scratching");
+		dog->setIdeas(-4, "scratching");
 
 		*doggy = *dog;
 		*catty = *cat;
